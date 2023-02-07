@@ -1,7 +1,13 @@
+import asyncio
+from typing import Optional
 
+from motor.motor_asyncio import AsyncIOMotorClient
+from pydantic import BaseModel
+
+from beanie import Document, Indexed, init_beanie
 from pymongo import MongoClient
 
-client = MongoClient("mongodb://localhost:27017/")
+client = AsyncIOMotorClient("mongodb://localhost:27017/")
 try:
     client.admin.command('ismaster')
     print("Connected to the database successfully.")

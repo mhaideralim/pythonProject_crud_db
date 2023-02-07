@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+import asyncio
 
 class Person(BaseModel):
     id: int
